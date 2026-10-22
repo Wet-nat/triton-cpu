@@ -273,6 +273,7 @@ class CPUBackend(BaseBackend):
         cpu.passes.ttcpuir.add_lower_affine(pm)
         passes.convert.add_scf_to_cf(pm)
         passes.convert.add_index_to_llvmir(pm)
+        cpu.passes.ttcpuir.add_map_elementwise_to_llvmir(pm)
         cpu.passes.ttcpuir.add_func_op_to_llvmir(pm)
         cpu.passes.ttcpuir.add_program_id_to_llvmir(pm)
         cpu.passes.ttcpuir.add_memory_op_to_llvmir(pm)
